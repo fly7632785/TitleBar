@@ -1,9 +1,9 @@
 # TitleBar
-a title bar like iOS 
+A title bar like iOS 
 
 
 ### ScreenShots
-<img src="https://github.com/fly7632785/TitleBar/raw/master/screenshots/shot1.png" width="40%"/>
+<img src="https://github.com/fly7632785/TitleBar/raw/master/screenShots/shot1.png" width="40%"/>
 
 ### Support 
 - the most left text and img 
@@ -38,16 +38,19 @@ a title bar like iOS
         app:tb_right_img2="@drawable/ic_launcher"
         app:tb_right_text="菜单" />
         
-**Expose each child view, you can operate it directly and flexible**
+
 ```
-···
+
+**Expose each child view, you can operate it directly and flexible**
+
+```
  titleBar6.getLeftImg().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getBaseContext(),"left click",Toast.LENGTH_SHORT).show();
             }
-        });
-···
+        });
+```
 
 
 ### Gradle
