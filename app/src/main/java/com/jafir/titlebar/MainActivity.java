@@ -10,7 +10,6 @@ import com.jafir.TitleBar;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         TitleBar titleBar6 = (TitleBar) findViewById(R.id.title_6);
 
 
+
         titleBar2.setTextColor(Color.CYAN);
         titleBar2.setImgPadding(20);
         titleBar2.setTextPadding(10);
@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(),"click",Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        titleBar3.setCustomTitle(View.inflate(this,R.layout.custom_title,null));
 
         titleBar6.setTextPadding(5);
         titleBar6.setBackgroundColor(Color.GREEN);
@@ -56,9 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
         titleBar6.getRightText().setText("hi~");
         titleBar6.setTextColor(Color.BLACK);
-
-
-
 
     }
 }

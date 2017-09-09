@@ -232,7 +232,6 @@ public class TitleBar extends ViewGroup {
             if (mCustomCenterView != null) {
                 mCenterLayout.removeView(mCustomCenterView);
             }
-
         } else {
             if (mCustomCenterView != null) {
                 mCenterLayout.removeView(mCustomCenterView);
