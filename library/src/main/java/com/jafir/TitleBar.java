@@ -205,7 +205,6 @@ public class TitleBar extends ViewGroup {
         mDividerView.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, mDividerViewHeight));
         mDividerView.setBackgroundResource(R.drawable.shape_title);
         addView(mDividerView);
-        initData();
         initVisiable();
     }
 
@@ -215,15 +214,6 @@ public class TitleBar extends ViewGroup {
         mRightImg1.setVisibility(GONE);
         mRightImg2.setVisibility(GONE);
         mRightText.setVisibility(GONE);
-    }
-
-    private void initData() {
-        mLeftImg.setImageResource(R.drawable.ic_launcher);
-        mRightImg1.setImageResource(R.drawable.ic_launcher);
-        mRightImg2.setImageResource(R.drawable.ic_launcher);
-        mCenterText.setText("title");
-        mLeftText.setText("返回");
-        mRightText.setText("点赞");
     }
 
     public void setCustomTitle(View titleView) {
@@ -335,6 +325,10 @@ public class TitleBar extends ViewGroup {
 
     public View getDividerView() {
         return mDividerView;
+    }
+
+    public int getMode() {
+        return mode;
     }
 
     public void setImgPadding(int mImgPadding) {
