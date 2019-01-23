@@ -7,13 +7,18 @@
             <enum name="menu" value="2" />
             <enum name="close" value="3" />
         </attr>
-        <attr name="tb_left_img" format="reference"/>
-        <attr name="tb_left_text" format="string"/>
-        <attr name="tb_left_text_left_drawable" format="reference"/>
-        <attr name="tb_center_text" format="string"/>
-        <attr name="tb_right_text" format="string"/>
-        <attr name="tb_right_img1" format="reference"/>
-        <attr name="tb_right_img2" format="reference"/>
+        <attr name="tb_left_img" format="reference" />
+        <attr name="tb_left_img_padding" format="dimension" />
+        <attr name="tb_text_padding" format="dimension" />
+        <attr name="tb_left_text" format="string" />
+        <attr name="tb_left_text_left_drawable" format="reference" />
+        <attr name="tb_center_text" format="string" />
+        <attr name="tb_right_text" format="string" />
+        <attr name="tb_right_img1" format="reference" />
+        <attr name="tb_right_img2" format="reference" />
+        <attr name="tb_right_img1_padding" format="dimension" />
+        <attr name="tb_right_img2_padding" format="dimension" />
+
 
     </declare-styleable>
 </resources>

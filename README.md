@@ -24,6 +24,9 @@ A title bar like iOS
 | tb_right_img1   |  right img1  |
 | tb_right_img2   |  right img2  |
 | tb_right_text   |  right text  |
+| tb_left_img_padding   |  left img padding  |
+|  tb_right_img1_padding   |  right img1 padding  |
+| tb_right_img2_padding   |  right img2 paddind |
 
 ```
 <com.jafir.TitleBar
@@ -61,7 +64,7 @@ repositories {
 }
 ```
 ```
-compile 'com.github.fly7632785:TitleBar:1.0.0'
+compile 'com.github.fly7632785:TitleBar:1.0.2'
 ```
 
 

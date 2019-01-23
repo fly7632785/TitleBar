@@ -30,9 +30,9 @@ public class TitleBar extends ViewGroup {
     private static final int DEFAULT_TITLE_BAR_HEIGHT = 56;
     private static final int DEFAULT_IMG_SIZE = dip2px(40);
 
-    public final static int TOOLBAR_MODE_NONE  = 0;
-    public final static int TOOLBAR_MODE_BACK  = 1;
-    public final static int TOOLBAR_MODE_MENU  = 2;
+    public final static int TOOLBAR_MODE_NONE = 0;
+    public final static int TOOLBAR_MODE_BACK = 1;
+    public final static int TOOLBAR_MODE_MENU = 2;
     public final static int TOOLBAR_MODE_CLOSE = 3;
 
     private TextView mLeftText;
@@ -58,7 +58,8 @@ public class TitleBar extends ViewGroup {
 
     @IntDef({TOOLBAR_MODE_NONE, TOOLBAR_MODE_BACK, TOOLBAR_MODE_MENU, TOOLBAR_MODE_CLOSE})
     @Retention(RetentionPolicy.SOURCE)
-    public @interface ToolbarMode{}
+    public @interface ToolbarMode {
+    }
 
     @ToolbarMode
     private int mode = TOOLBAR_MODE_NONE;
@@ -93,21 +94,25 @@ public class TitleBar extends ViewGroup {
     private void initAttr(TypedArray typedArray) {
         if (typedArray.hasValue(R.styleable.TitleBar_tb_left_img_type)) {
             mLeftImg.setVisibility(VISIBLE);
-            setMode(typedArray.getInt(R.styleable.TitleBar_tb_left_img_type,TOOLBAR_MODE_NONE));
+            setMode(typedArray.getInt(R.styleable.TitleBar_tb_left_img_type, TOOLBAR_MODE_NONE));
         }
 
         if (typedArray.hasValue(R.styleable.TitleBar_tb_left_img)) {
             mLeftImg.setVisibility(VISIBLE);
             mLeftImg.setImageResource(typedArray.getResourceId(R.styleable.TitleBar_tb_left_img, R.drawable.ic_launcher));
         }
+        if (typedArray.hasValue(R.styleable.TitleBar_tb_left_img_padding)) {
+            int padding = dip2px(typedArray.getDimensionPixelSize(R.styleable.TitleBar_tb_left_img_padding, 0));
+            mLeftImg.setPadding(padding, padding, padding, padding);
+        }
         if (typedArray.hasValue(R.styleable.TitleBar_tb_left_text)) {
             mLeftText.setVisibility(VISIBLE);
             mLeftText.setText(typedArray.getString(R.styleable.TitleBar_tb_left_text));
         }
         if (typedArray.hasValue(R.styleable.TitleBar_tb_left_text_left_drawable)) {
-            Drawable leftDrawable = getResources().getDrawable(typedArray.getResourceId(R.styleable.TitleBar_tb_left_text_left_drawable,R.drawable.ic_launcher));
-            leftDrawable.setBounds(0,0,mLeftTextLeftDrawableSize,mLeftTextLeftDrawableSize);
-            mLeftText.setCompoundDrawables(leftDrawable,null,null,null);
+            Drawable leftDrawable = getResources().getDrawable(typedArray.getResourceId(R.styleable.TitleBar_tb_left_text_left_drawable, R.drawable.ic_launcher));
+            leftDrawable.setBounds(0, 0, mLeftTextLeftDrawableSize, mLeftTextLeftDrawableSize);
+            mLeftText.setCompoundDrawables(leftDrawable, null, null, null);
         }
 
         if (typedArray.hasValue(R.styleable.TitleBar_tb_center_text)) {
@@ -126,6 +131,14 @@ public class TitleBar extends ViewGroup {
         if (typedArray.hasValue(R.styleable.TitleBar_tb_right_text)) {
             mRightText.setVisibility(VISIBLE);
             mRightText.setText(typedArray.getString(R.styleable.TitleBar_tb_right_text));
+        }
+        if (typedArray.hasValue(R.styleable.TitleBar_tb_right_img1_padding)) {
+            int padding = dip2px(typedArray.getDimensionPixelSize(R.styleable.TitleBar_tb_right_img1_padding, 0));
+            mRightImg1.setPadding(padding, padding, padding, padding);
+        }
+        if (typedArray.hasValue(R.styleable.TitleBar_tb_right_img2_padding)) {
+            int padding = dip2px(typedArray.getDimensionPixelSize(R.styleable.TitleBar_tb_right_img2_padding, 0));
+            mRightImg2.setPadding(padding, padding, padding, padding);
         }
     }
 
@@ -332,15 +345,15 @@ public class TitleBar extends ViewGroup {
     }
 
     public void setImgPadding(int mImgPadding) {
-        mLeftImg.setPadding(mImgPadding,mImgPadding,mImgPadding,mImgPadding);
-        mRightImg1.setPadding(mImgPadding,mImgPadding,mImgPadding,mImgPadding);
-        mRightImg2.setPadding(mImgPadding,mImgPadding,mImgPadding,mImgPadding);
+        mLeftImg.setPadding(mImgPadding, mImgPadding, mImgPadding, mImgPadding);
+        mRightImg1.setPadding(mImgPadding, mImgPadding, mImgPadding, mImgPadding);
+        mRightImg2.setPadding(mImgPadding, mImgPadding, mImgPadding, mImgPadding);
     }
 
     public void setTextPadding(int mTextPadding) {
-        mLeftText.setPadding(mTextPadding,mTextPadding,mTextPadding,mTextPadding);
-        mCenterText.setPadding(mTextPadding,mTextPadding,mTextPadding,mTextPadding);
-        mRightText.setPadding(mTextPadding,mTextPadding,mTextPadding,mTextPadding);
+        mLeftText.setPadding(mTextPadding, mTextPadding, mTextPadding, mTextPadding);
+        mCenterText.setPadding(mTextPadding, mTextPadding, mTextPadding, mTextPadding);
+        mRightText.setPadding(mTextPadding, mTextPadding, mTextPadding, mTextPadding);
     }
 
     public void setTextColor(int mTextColor) {

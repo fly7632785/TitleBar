@@ -32,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:tb_center_text="jafir"
+        app:tb_right_img1_padding="4dp"
         app:tb_left_text="退出啦"
         app:tb_right_img1="@drawable/ic_launcher" />
 

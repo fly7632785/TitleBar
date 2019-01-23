@@ -22,38 +22,34 @@ public class MainActivity extends AppCompatActivity {
         TitleBar titleBar6 = (TitleBar) findViewById(R.id.title_6);
 
 
-
         titleBar2.setTextColor(Color.CYAN);
-        titleBar2.setImgPadding(20);
-        titleBar2.setTextPadding(10);
         titleBar2.getLeftImg().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getBaseContext(),"click",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), "click", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-        titleBar3.setCustomTitle(View.inflate(this,R.layout.custom_title,null));
+//
+        titleBar3.setCustomTitle(View.inflate(this, R.layout.custom_title, null));
 
         titleBar6.setTextPadding(5);
         titleBar6.setBackgroundColor(Color.GREEN);
         titleBar6.getLeftImg().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getBaseContext(),"left click",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), "left click", Toast.LENGTH_SHORT).show();
             }
         });
         titleBar6.getCenterText().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getBaseContext(),"center click",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), "center click", Toast.LENGTH_SHORT).show();
             }
         });
         titleBar6.getRightImg1().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getBaseContext(),"right click",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), "right click", Toast.LENGTH_SHORT).show();
             }
         });
 
